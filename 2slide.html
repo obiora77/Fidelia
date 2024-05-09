@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slide Image</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'poppins', sans-serif;
+    }
+    .container {
+      padding: 2rem;
+    }
+
+    .slider-arppeer {
+      position: relative;
+      max-width: 48rem;
+      margin: 0 auto;
+      overflow: hidden; /* Hide the scrollbar */
+    }
+
+    .slider {
+      display: flex;
+      aspect-ratio: 16/9;
+      box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
+      border-radius: 8.5px;
+    }
+
+    .slider img {
+      flex: 1 0 100%;
+      scroll-snap-align: start;
+      border-radius: 8.6px;
+      /* object-fit: cover; */
+    }
+
+    .slider-nav {
+      display: flex;
+      column-gap: 1rem;
+      position: absolute;
+      bottom: 1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+    }
+
+    .slider-nav a{
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 50%;
+      background: #fff; /* Change dot color to white */
+      opacity: 0.75;
+      transform: opacity ease 250ms;
+    }
+
+    .slider-nav a:hover {
+      opacity: 1;
+    }
+
+    .write {
+      position: relative;
+      font-weight: bold;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h1 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Hi Guys I am Obiora Fidelia <Cc:noie></Cc:noie></h1>
+  
+  <section class="container">
+    <div class="slider-arppeer" id="sliderContainer">
+      <div class="slider" id="slider">
+        <img id="slide-1" src="food.jpg" alt="image">
+        <img id="slide-2" src="focus.jpg" alt="image">
+        <img id="slide-3" src="some.jpg" alt="image">
+        <img id="slide-4" src="odd.jpg" alt="image"> 
+        <img id="slide-5" src="foodtech.jpg" alt="image">
+        <img id="slide-6" src="rome.jpg" alt="image">
+      </div>
+      <!-- <div class="slider-nav">
+          <a href="#slide-1"></a>
+          <a href="#slide-2"></a>
+          <a href="#slide-3"></a>
+          <a href="#slide-4"></a>
+          <a href="#slide-5"></a>
+          <a href="#slide-6"></a>
+      </div> -->
+    </div>
+  </section>
+
+  <!-- <center> -->
+  <div class="write">
+    A food engineering student is an individual pursuing a degree in food engineering, a field that combines <br>
+    principles from engineering, biology, and food science to develop innovative solutions for the food<br>
+     industry. These students aim to improve food production, processing, safety, and sustainability.<br><br>
+
+        Food engineering students typically explore topics such as:<br><br>
+
+        - Food processing and preservation<br>
+        - Food safety and quality control<br>
+        - Food packaging and storage<br>
+        - Food product development<br>
+        - Food plant design and operations<br>
+        - Food microbiology and chemistry<br><br>
+
+        Throughout their studies, food engineering students develop a strong foundation in math, science, and <br>
+        engineering principles, as well as practical skills in food processing and product development. <br>
+        They learn to apply engineering concepts to real-world food industry challenges, such as:<br><br>
+
+        - Designing efficient food processing systems<br>
+        - Developing new food products and packaging<br>
+        - Improving food safety and quality control measures<br>
+        - Optimizing food manufacturing operations<br><br>
+
+        Food engineering students often participate in internships, research projects, and collaborations with food <br>
+        industry professionals, gaining hands-on experience and building a network of contacts in the field.<br><br>
+
+        Upon graduation, food engineering students can pursue various careers, including:<br><br>
+
+        - Food processing and manufacturing<br>
+        - Food safety and quality control<br>
+        - Food product development and innovation<br>
+        - Food packaging and design<br>
+        - Food plant management and operations<br>
+        - Research and development<br><br>
+
+        Food engineering students are shaping the future of the food industry, creating innovative solutions to feed<br> 
+        a growing global population while ensuring food safety, quality, and sustainability.
+      </div>
+    <!-- </center> -->
+
+  <script>
+    const slider = document.getElementById('slider');
+    let currentIndex = 0;
+
+    // Auto slide every 3 seconds
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % slider.children.length;
+      slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }, 5000);
+  </script>
+</body>
+</html>
